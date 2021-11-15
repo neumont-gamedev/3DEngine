@@ -1,6 +1,6 @@
 #pragma once
 #include "Resource/Resource.h"
-#include "Math/Vector2.h"
+#include "Math/MathTypes.h"
 #include <SDL.h>
 
 namespace nc
@@ -16,7 +16,7 @@ namespace nc
 		bool Create(SDL_Surface* surface);
 		bool Load(const std::string& name, void* data) override;
 
-		Vector2 GetSize() const;
+		glm::vec2 GetSize() const;
 
 		friend class Renderer;
 

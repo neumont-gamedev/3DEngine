@@ -1,27 +1,27 @@
 #pragma once
-#include "Matrix33.h"
+#include "Math/MathTypes.h"
 #include "Core/Serializable.h"
 
 namespace nc
 {
 	struct Transform : public ISerializable
 	{
-		Vector2 position;
+		glm::vec3 position{ 0 };
 		float rotation = 0;
-		Vector2 scale = 1;
+		glm::vec3 scale{ 1 };
 
-		Vector2 localPosition;
+		glm::vec3 localPosition{ 0 };
 		float localRotation = 0;
-		Vector2 localScale = 1;
+		glm::vec3 localScale{ 1 };
 
-		Matrix33 matrix;
+		glm::mat4 matrix;
 
 		Transform() {}
-		Transform(const Vector2& position, float rotation = 0, float scale = 1) : 
+		Transform(const glm::vec3& position, float rotation = 0, const glm::vec3& scale = glm::vec3{ 1 }) :
 			position{ position }, rotation{ rotation }, scale{ scale } {}
 
 		void Update();
-		void Update(const Matrix33& mx);
+		void Update(const glm::mat4& mx);
 
 		virtual bool Write(const rapidjson::Value& value) const override;
 		virtual bool Read(const rapidjson::Value& value) override;

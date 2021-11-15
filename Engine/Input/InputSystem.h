@@ -1,6 +1,6 @@
 #pragma once
 #include "Framework/System.h"
-#include "Math/Vector2.h"
+#include "Math/MathTypes.h"
 #include <SDL.h>
 #include <vector>
 #include <array>
@@ -34,7 +34,7 @@ namespace nc
 		bool IsKeyDown(int id) const { return keyboardState[id]; }
 		bool IsPreviousKeyDown(int id) const { return prevKeyboardState[id]; }
 
-		const Vector2& GetMousePosition() const { return mousePosition; }
+		const glm::vec2& GetMousePosition() const { return mousePosition; }
 		bool IsButtonDown(int id) { return mouseButtonState[id]; }
 		bool IsPreviousButtonDown(int id) { return prevMouseButtonState[id]; }
 		eKeyState GetButtonState(int id);
@@ -44,7 +44,7 @@ namespace nc
 		std::vector<Uint8> prevKeyboardState;
 		int numKeys;
 
-		Vector2 mousePosition;
+		glm::vec2 mousePosition;
 		std::array<Uint8, 3> mouseButtonState;
 		std::array<Uint8, 3> prevMouseButtonState;
 	};

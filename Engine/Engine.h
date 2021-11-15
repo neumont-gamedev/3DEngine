@@ -15,8 +15,7 @@
 #include "Framework/Factory.h"
 
 // math
-#include "Math/Vector2.h"
-#include "Math/Color.h"
+#include "Math/MathTypes.h"
 #include "Math/Random.h"
 #include "Math/MathUtils.h"
 #include "Math/Transform.h"
@@ -30,11 +29,6 @@
 // graphics
 #include "Graphics/Renderer.h"
 #include "Graphics/Texture.h"
-#include "Graphics/Font.h"
-#include "Graphics/ParticleSystem.h"
-
-// physics system
-#include "Physics/PhysicsSystem.h"
 
 // resource
 #include "Resource/ResourceSystem.h"
@@ -42,15 +36,10 @@
 // objects
 #include "Object/Actor.h"
 #include "Object/Scene.h"
-#include "Object/Tilemap.h"
 
 // components
-#include "Component/SpriteComponent.h"
-#include "Component/SpriteAnimationComponent.h"
 #include "Component/PhysicsComponent.h"
-#include "Component/RBPhysicsComponent.h"
 #include "Component/AudioComponent.h"
-#include "Component/TextComponent.h"
 
 #include <vector>
 #include <memory>

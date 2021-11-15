@@ -77,7 +77,7 @@ namespace nc
 			return true;
 		}
 
-		bool Get(const rapidjson::Value& value, const std::string& name, Vector2& data)
+		bool Get(const rapidjson::Value& value, const std::string& name, glm::vec2& data)
 		{
 			// check if 'name' member exists and is an array
 			if (value.HasMember(name.c_str()) == false || value[name.c_str()].IsArray() == false || value[name.c_str()].Size() != 2)
@@ -97,7 +97,7 @@ namespace nc
 			return true;
 		}
 
-		bool Get(const rapidjson::Value& value, const std::string& name, Color& data)
+		bool Get(const rapidjson::Value& value, const std::string& name, glm::vec3& data)
 		{
 			// check if 'name' member exists and is an array
 			if (value.HasMember(name.c_str()) == false || value[name.c_str()].IsArray() == false || value[name.c_str()].Size() != 3)
@@ -117,7 +117,7 @@ namespace nc
 			return true;
 		}
 
-		bool Get(const rapidjson::Value& value, const std::string& name, SDL_Rect& data)
+		bool Get(const rapidjson::Value& value, const std::string& name, glm::vec4& data)
 		{
 			// check if 'name' member exists and is an array
 			if (value.HasMember(name.c_str()) == false || value[name.c_str()].IsArray() == false || value[name.c_str()].Size() != 4)
@@ -126,11 +126,13 @@ namespace nc
 			}
 
 			auto& array = value[name.c_str()];
-
-			data.x = array[0].GetInt();
-			data.y = array[1].GetInt();
-			data.w = array[2].GetInt();
-			data.h = array[3].GetInt();
+			for (rapidjson::SizeType i = 0; i < array.Size(); i++)
+			{
+				if (array[i].IsNumber())
+				{
+					data[i] = array[i].GetFloat();
+				}
+			}
 
 			return true;
 		}

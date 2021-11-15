@@ -9,7 +9,7 @@ namespace nc
 		owner->transform.position += velocity * owner->scene->engine->time.deltaTime;
 		velocity *= damping;
 
-		acceleration = Vector2::zero;
+		acceleration = { 0, 0, 0 };
 	}
 
 	bool PhysicsComponent::Write(const rapidjson::Value& value) const

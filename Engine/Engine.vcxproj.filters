@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Resources">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
     <Filter Include="Source">
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
@@ -36,9 +32,6 @@
     <Filter Include="Source\Component">
       <UniqueIdentifier>{140f65cb-0bdd-44e1-936c-223252058b29}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source\Physics">
-      <UniqueIdentifier>{dbfffd1c-0c4e-494c-a5e4-41829655e3df}</UniqueIdentifier>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Engine.cpp">
@@ -48,12 +41,6 @@
       <Filter>Source\Framework</Filter>
     </ClCompile>
     <ClCompile Include="Math\Transform.cpp">
-      <Filter>Source\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Math\Vector2.cpp">
-      <Filter>Source\Math</Filter>
-    </ClCompile>
-    <ClCompile Include="Math\Color.cpp">
       <Filter>Source\Math</Filter>
     </ClCompile>
     <ClCompile Include="Math\Random.cpp">
@@ -80,50 +67,23 @@
     <ClCompile Include="Input\InputSystem.cpp">
       <Filter>Source\Input</Filter>
     </ClCompile>
-    <ClCompile Include="Graphics\ParticleSystem.cpp">
-      <Filter>Source\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="Audio\AudioSystem.cpp">
       <Filter>Source\Audio</Filter>
     </ClCompile>
     <ClCompile Include="Audio\AudioChannel.cpp">
       <Filter>Source\Audio</Filter>
     </ClCompile>
-    <ClCompile Include="Graphics\Font.cpp">
-      <Filter>Source\Graphics</Filter>
-    </ClCompile>
     <ClCompile Include="Core\Utilities.cpp">
       <Filter>Source\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Component\SpriteComponent.cpp">
-      <Filter>Source\Component</Filter>
-    </ClCompile>
     <ClCompile Include="Component\PhysicsComponent.cpp">
-      <Filter>Source\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Component\SpriteAnimationComponent.cpp">
       <Filter>Source\Component</Filter>
     </ClCompile>
     <ClCompile Include="Core\Json.cpp">
       <Filter>Source\Core</Filter>
     </ClCompile>
-    <ClCompile Include="Component\RBPhysicsComponent.cpp">
-      <Filter>Source\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Physics\PhysicsSystem.cpp">
-      <Filter>Source\Physics</Filter>
-    </ClCompile>
     <ClCompile Include="Component\AudioComponent.cpp">
       <Filter>Source\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Component\TextComponent.cpp">
-      <Filter>Source\Component</Filter>
-    </ClCompile>
-    <ClCompile Include="Physics\ContactListener.cpp">
-      <Filter>Source\Physics</Filter>
-    </ClCompile>
-    <ClCompile Include="Object\Tilemap.cpp">
-      <Filter>Source\Object</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -139,19 +99,7 @@
     <ClInclude Include="Math\Transform.h">
       <Filter>Source\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Math\Vector2.h">
-      <Filter>Source\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Math\Color.h">
-      <Filter>Source\Math</Filter>
-    </ClInclude>
     <ClInclude Include="Math\MathUtils.h">
-      <Filter>Source\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Math\Matrix22.h">
-      <Filter>Source\Math</Filter>
-    </ClInclude>
-    <ClInclude Include="Math\Matrix33.h">
       <Filter>Source\Math</Filter>
     </ClInclude>
     <ClInclude Include="Object\Scene.h">
@@ -187,17 +135,11 @@
     <ClInclude Include="Input\InputSystem.h">
       <Filter>Source\Input</Filter>
     </ClInclude>
-    <ClInclude Include="Graphics\ParticleSystem.h">
-      <Filter>Source\Graphics</Filter>
-    </ClInclude>
     <ClInclude Include="Audio\AudioSystem.h">
       <Filter>Source\Audio</Filter>
     </ClInclude>
     <ClInclude Include="Audio\AudioChannel.h">
       <Filter>Source\Audio</Filter>
-    </ClInclude>
-    <ClInclude Include="Graphics\Font.h">
-      <Filter>Source\Graphics</Filter>
     </ClInclude>
     <ClInclude Include="Core\Utilities.h">
       <Filter>Source\Core</Filter>
@@ -208,13 +150,7 @@
     <ClInclude Include="Component\GraphicsComponent.h">
       <Filter>Source\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Component\SpriteComponent.h">
-      <Filter>Source\Component</Filter>
-    </ClInclude>
     <ClInclude Include="Component\PhysicsComponent.h">
-      <Filter>Source\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Component\SpriteAnimationComponent.h">
       <Filter>Source\Component</Filter>
     </ClInclude>
     <ClInclude Include="Framework\Singleton.h">
@@ -229,34 +165,11 @@
     <ClInclude Include="Core\Serializable.h">
       <Filter>Source\Core</Filter>
     </ClInclude>
-    <ClInclude Include="Component\RBPhysicsComponent.h">
-      <Filter>Source\Component</Filter>
-    </ClInclude>
-    <ClInclude Include="Physics\PhysicsSystem.h">
-      <Filter>Source\Physics</Filter>
-    </ClInclude>
     <ClInclude Include="Component\AudioComponent.h">
       <Filter>Source\Component</Filter>
     </ClInclude>
-    <ClInclude Include="Component\TextComponent.h">
-      <Filter>Source\Component</Filter>
+    <ClInclude Include="Math\MathTypes.h">
+      <Filter>Source\Math</Filter>
     </ClInclude>
-    <ClInclude Include="Physics\ContactListener.h">
-      <Filter>Source\Physics</Filter>
-    </ClInclude>
-    <ClInclude Include="Object\Tilemap.h">
-      <Filter>Source\Object</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Text Include="..\Build\Resources\scene.txt">
-      <Filter>Resources</Filter>
-    </Text>
-    <Text Include="..\Build\Resources\map.txt">
-      <Filter>Resources</Filter>
-    </Text>
-    <Text Include="..\Build\Resources\title.txt">
-      <Filter>Resources</Filter>
-    </Text>
   </ItemGroup>
 </Project>

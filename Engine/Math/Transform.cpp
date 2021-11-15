@@ -4,35 +4,32 @@ namespace nc
 {
 	void Transform::Update()
 	{
-		Matrix33 mxs;
-		mxs.Scale(scale);
+		glm::mat4 mxs = glm::scale(scale);
+		
+		//glm::mat4 mxr;
+		//mxr.Rotate(rotation);
 
-		Matrix33 mxr;
-		mxr.Rotate(rotation);
+		glm::mat4 mxt = glm::translate(position);
 
-		Matrix33 mxt;
-		mxt.Translate(position);
-
-		matrix = mxs * mxr * mxt;
+		matrix = mxs * mxt;
 	}
 
-	void Transform::Update(const Matrix33& mx)
+	void Transform::Update(const glm::mat4& mx)
 	{
-		Matrix33 mxs;
-		mxs.Scale(localScale);
+		glm::mat4 mxs = glm::scale(localScale);
 
-		Matrix33 mxr;
-		mxr.Rotate(localRotation);
+		//glm::mat4 mxr;
+		//mxr.Rotate(localRotation);
 
-		Matrix33 mxt;
-		mxt.Translate(localPosition);
+		glm::mat4 mxt = glm::translate(localPosition);
 
-		matrix = mxs * mxr * mxt * mx;
+		matrix = mxs * mxt * mx;
 
-		position = matrix.GetTranslate();
-		rotation = matrix.GetRotation();
-		scale = matrix.GetScale();
+		//position = matrix.GetTranslate();
+		//rotation = matrix.GetRotation();
+		//scale = matrix.GetScale();
 	}
+
 	bool Transform::Write(const rapidjson::Value& value) const
 	{
 		return false;

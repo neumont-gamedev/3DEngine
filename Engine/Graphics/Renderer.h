@@ -20,6 +20,9 @@ namespace nc
 		void EndFrame();
 
 	private:
+		void DisplayVersion();
+
+	private:
 		SDL_GLContext context;
 		SDL_Window* window{ nullptr };
 	};

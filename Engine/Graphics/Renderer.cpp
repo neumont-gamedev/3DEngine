@@ -54,16 +54,33 @@ namespace nc
 			SDL_Log("Failed to create OpenGL context");
 			exit(-1);
 		}
+
+		glEnable(GL_DEPTH_TEST);
+
+		DisplayVersion();
 	}
 
 	void Renderer::BeginFrame()
 	{
 		glClearColor(0, 0, 0, 1);
-		glClear(GL_COLOR_BUFFER_BIT);
+		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	}
 
 	void Renderer::EndFrame()
 	{
 		SDL_GL_SwapWindow(window);
+	}
+
+	void Renderer::DisplayVersion()
+	{
+		const GLubyte* renderer = glGetString(GL_RENDERER);
+		const GLubyte* vendor = glGetString(GL_VENDOR);
+		const GLubyte* version = glGetString(GL_VERSION);
+		const GLubyte* glslVersion = glGetString(GL_SHADING_LANGUAGE_VERSION);
+
+		std::cout << "GL Vendor        :" << vendor << std::endl;
+		std::cout << "GL Renderer      :" << renderer << std::endl;
+		std::cout << "GL Version       :" << version << std::endl;
+		std::cout << "GLSL Version     :" << glslVersion << std::endl;
 	}
 }

@@ -48,6 +48,7 @@
 #include "Component/CameraComponent.h"
 #include "Component/MeshComponent.h"
 #include "Component/ModelComponent.h"
+#include "Component/LightComponent.h"
 
 #include "Component/FreeCameraController.h"
 

@@ -56,9 +56,9 @@ int main(int argc, char** argv)
 	nc::SetFilePath("../resources");
 	
 	// create shaders
-	std::shared_ptr<nc::Program> program = engine->Get<nc::ResourceSystem>()->Get<nc::Program>("basic_shader");
-	std::shared_ptr<nc::Shader> vshader = engine->Get<nc::ResourceSystem>()->Get<nc::Shader>("shaders/basic.vert", (void*)GL_VERTEX_SHADER);
-	std::shared_ptr<nc::Shader> fshader = engine->Get<nc::ResourceSystem>()->Get<nc::Shader>("shaders/basic.frag", (void*)GL_FRAGMENT_SHADER);
+	std::shared_ptr<nc::Program> program = engine->Get<nc::ResourceSystem>()->Get<nc::Program>("light_shader");
+	std::shared_ptr<nc::Shader> vshader = engine->Get<nc::ResourceSystem>()->Get<nc::Shader>("shaders/light.vert", (void*)GL_VERTEX_SHADER);
+	std::shared_ptr<nc::Shader> fshader = engine->Get<nc::ResourceSystem>()->Get<nc::Shader>("shaders/light.frag", (void*)GL_FRAGMENT_SHADER);
 	program->AddShader(vshader);
 	program->AddShader(fshader);
 	program->Link();
@@ -80,7 +80,7 @@ int main(int argc, char** argv)
 		texture = engine->Get<nc::ResourceSystem>()->Get<nc::Texture>("textures/rocks.jpg");
 		texture->Bind();
 
-		texture = engine->Get<nc::ResourceSystem>()->Get<nc::Texture>("textures/ogre_diffuse.bmp");
+		texture = engine->Get<nc::ResourceSystem>()->Get<nc::Texture>("textures/spot.png");
 		texture->Bind();
 	}
 
@@ -88,7 +88,7 @@ int main(int argc, char** argv)
 	{
 		auto actor = nc::ObjectFactory::Instance().Create<nc::Actor>("Actor");
 		actor->name = "camera";
-		actor->transform.position = glm::vec3{ 0, 0, 10 };
+		actor->transform.position = glm::vec3{ 0, 0, 5 };
 
 		{
 			auto component = nc::ObjectFactory::Instance().Create<nc::CameraComponent>("CameraComponent");
@@ -118,12 +118,26 @@ int main(int argc, char** argv)
 		//component->vertexBuffer = engine->Get<nc::ResourceSystem>()->Get<nc::VertexBuffer>("cube_mesh");
 
 		auto component = nc::ObjectFactory::Instance().Create<nc::ModelComponent>("ModelComponent");
-		component->program = engine->Get<nc::ResourceSystem>()->Get<nc::Program>("basic_shader");
-		component->model = engine->Get<nc::ResourceSystem>()->Get<nc::Model>("models/ogre.obj");
+		component->program = engine->Get<nc::ResourceSystem>()->Get<nc::Program>("light_shader");
+		component->model = engine->Get<nc::ResourceSystem>()->Get<nc::Model>("models/cube.obj");
 
 		actor->AddComponent(std::move(component));
 		scene->AddActor(std::move(actor));
 	}
+
+	// lighting
+	auto shader = engine->Get<nc::ResourceSystem>()->Get<nc::Program>("light_shader");
+	shader->SetUniform("light.ambient", glm::vec3{ 0.2f });
+	shader->SetUniform("material.ambient", glm::vec3{ 1 });
+
+	shader->SetUniform("light.diffuse", glm::vec3{ 1 });
+	shader->SetUniform("material.diffuse", glm::vec3{ 1 });
+
+	shader->SetUniform("light.specular", glm::vec3{ 1 });
+	shader->SetUniform("material.specular", glm::vec3{ 1 });
+
+	shader->SetUniform("light.position", glm::vec4{ 4, 4, 4, 1 });
+
 
 	glm::vec3 translate{ 0 };
 	float angle = 0;

@@ -1,7 +1,7 @@
 #pragma once
 
-#define REGISTER_CLASS(class) nc::ObjectFactory::Instance().Register<class>(#class);
-#define CREATE_ENGINE_CLASS(class) nc::ObjectFactory::Instance().Create<nc::class>(#class);
+#define REGISTER_CLASS(class)		nc::ObjectFactory::Instance().Register<class>(#class);
+#define CREATE_ENGINE_OBJECT(class) nc::ObjectFactory::Instance().Create<nc::class>(#class);
 
 // core
 #include "Core/Utilities.h"

@@ -9,6 +9,12 @@
       <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
       <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
     </Filter>
+    <Filter Include="Resource\Materials">
+      <UniqueIdentifier>{216623c7-913b-4479-a648-46a22af8643b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource\Shaders">
+      <UniqueIdentifier>{6b4ca1bc-3ff4-48be-a426-1c6735189908}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -19,17 +25,26 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\Build\resources\shaders\basic.vert">
-      <Filter>Resource</Filter>
-    </None>
     <None Include="..\Build\resources\shaders\basic.frag">
-      <Filter>Resource</Filter>
+      <Filter>Resource\Shaders</Filter>
+    </None>
+    <None Include="..\Build\resources\shaders\basic.vert">
+      <Filter>Resource\Shaders</Filter>
     </None>
     <None Include="..\Build\resources\shaders\light.frag">
-      <Filter>Resource</Filter>
+      <Filter>Resource\Shaders</Filter>
     </None>
     <None Include="..\Build\resources\shaders\light.vert">
-      <Filter>Resource</Filter>
+      <Filter>Resource\Shaders</Filter>
+    </None>
+    <None Include="..\Build\resources\shaders\light.shdr">
+      <Filter>Resource\Shaders</Filter>
+    </None>
+    <None Include="..\Build\resources\materials\wood.mtl">
+      <Filter>Resource\Materials</Filter>
+    </None>
+    <None Include="..\Build\resources\materials\spot.mtl">
+      <Filter>Resource\Materials</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -8,7 +8,6 @@ out vec2 fs_texcoord;
 
 struct Material
 {
-	vec3 ambient;
 	vec3 diffuse;
 	vec3 specular; 
 	float shininess;
@@ -35,7 +34,7 @@ void main()
 
 
 	// ambient
-	vec3 ambient = material.ambient * light.ambient;
+	vec3 ambient = light.ambient;
 
 	// diffuse
 	vec3 vnormal = mat3(model_view) * normal;

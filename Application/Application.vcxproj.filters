@@ -15,6 +15,9 @@
     <Filter Include="Resource\Shaders">
       <UniqueIdentifier>{6b4ca1bc-3ff4-48be-a426-1c6735189908}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resource\Scenes">
+      <UniqueIdentifier>{1e06405e-5292-4ea6-b25d-1e5f9fca3027}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -63,6 +66,27 @@
     </None>
     <None Include="..\Build\resources\shaders\phong.vert">
       <Filter>Resource\Shaders</Filter>
+    </None>
+    <None Include="..\Build\resources\shaders\phong_normal.frag">
+      <Filter>Resource\Shaders</Filter>
+    </None>
+    <None Include="..\Build\resources\shaders\phong_normal.vert">
+      <Filter>Resource\Shaders</Filter>
+    </None>
+    <None Include="..\Build\resources\materials\rocks.mtl">
+      <Filter>Resource\Materials</Filter>
+    </None>
+    <None Include="..\Build\resources\scenes\main.scn">
+      <Filter>Resource\Scenes</Filter>
+    </None>
+    <None Include="..\Build\resources\shaders\phong_normal.shdr">
+      <Filter>Resource\Shaders</Filter>
+    </None>
+    <None Include="..\Build\resources\materials\bricks.mtl">
+      <Filter>Resource\Materials</Filter>
+    </None>
+    <None Include="..\Build\resources\materials\ogre.mtl">
+      <Filter>Resource\Materials</Filter>
     </None>
   </ItemGroup>
 </Project>

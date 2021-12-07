@@ -164,8 +164,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\Build\resources\materials\bricks.mtl" />
+    <None Include="..\Build\resources\materials\ogre.mtl" />
+    <None Include="..\Build\resources\materials\rocks.mtl" />
     <None Include="..\Build\resources\materials\spot.mtl" />
     <None Include="..\Build\resources\materials\wood.mtl" />
+    <None Include="..\Build\resources\scenes\main.scn" />
     <None Include="..\Build\resources\shaders\basic.frag" />
     <None Include="..\Build\resources\shaders\basic.vert" />
     <None Include="..\Build\resources\shaders\flat.frag" />
@@ -177,6 +181,9 @@
     <None Include="..\Build\resources\shaders\phong.frag" />
     <None Include="..\Build\resources\shaders\phong.shdr" />
     <None Include="..\Build\resources\shaders\phong.vert" />
+    <None Include="..\Build\resources\shaders\phong_normal.frag" />
+    <None Include="..\Build\resources\shaders\phong_normal.shdr" />
+    <None Include="..\Build\resources\shaders\phong_normal.vert" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

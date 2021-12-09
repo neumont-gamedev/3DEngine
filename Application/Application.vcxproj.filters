@@ -88,5 +88,14 @@
     <None Include="..\Build\resources\materials\ogre.mtl">
       <Filter>Resource\Materials</Filter>
     </None>
+    <None Include="..\Build\resources\shaders\effects.shdr">
+      <Filter>Resource\Shaders</Filter>
+    </None>
+    <None Include="..\Build\resources\shaders\effects.vert">
+      <Filter>Resource\Shaders</Filter>
+    </None>
+    <None Include="..\Build\resources\shaders\effects.frag">
+      <Filter>Resource\Shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>
